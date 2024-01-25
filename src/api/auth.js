@@ -2,8 +2,8 @@ import { axiosInstance } from "."
 
 export const saveUserInfo = async user =>{
  const currentUsers = {
-  name: user.displayName,
-  email : user.email,
+  name: user?.displayName,
+  email : user?.email,
   role : 'guest',
   status: 'pending',
  }
@@ -18,11 +18,11 @@ export const token = async email => {
  return data
 }
 
-// clear cookie from browser
-export const clearCookie = async () => {
- const { data } = await axiosInstance.get('/logoutUser')
- return data
-}
+// // clear cookie from browser
+// export const clearCookie = async () => {
+//  const { data } = await axiosInstance.get('/logoutUser')
+//  return data
+// }
 // get role
 export const getSpecificRole = async email => {
  const { data } = await axiosInstance(`/user/${email}`)
@@ -35,3 +35,4 @@ export const getAllUsers = async () => {
  console.log(data);
  return data
 }
+

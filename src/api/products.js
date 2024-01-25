@@ -6,13 +6,18 @@ export const addProduct = async newProducts =>{
  return data
 }
 
-// get guest prduct for both guest & moderator
-export const getProducts = async email=>{
-try {
- const {data} = await axiosInstance(`/api/v1/products/${email}`)
- console.log(data);
+// // get guest prduct for both guest & moderator
+// export const getProducts = async email=>{
+// try {
+//  const {data} = await axiosInstance(`/api/v1/products/${email}`)
+//  console.log(data);
+//  return data
+// } catch (error) {
+//  console.log(error.message);
+// }
+// }
+// Fetch all rooms from db
+export const getProducts = async () => {
+ const { data } = await axiosInstance('/products')
  return data
-} catch (error) {
- console.log(error.message);
-}
 }

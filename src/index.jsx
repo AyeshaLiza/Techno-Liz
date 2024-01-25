@@ -16,6 +16,7 @@ import AddProduct from "./Component/dashboard/GuestRoutes/Add Product/AddProduct
 import Profile from "./Component/dashboard/GuestRoutes/Profile/Profile";
 import MyProductsListing from "./Component/dashboard/GuestRoutes/MyProducts/MyProductsListing";
 import ProductDetail from "./Pages/Productdetail/ProductDetail";
+import Home from "./Pages/Home/Home";
 
 const router = createBrowserRouter([
  {
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
    children: [
     {
      path: '/',
-     element: <h1>Home</h1>
+     element: <Home></Home>
     },
     {
      path: '/product-detail/:_id',
